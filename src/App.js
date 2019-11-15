@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { connect } from 'react-redux';
+
+import styled from 'styled-components';
+
+import BotStack from './gameplayComponents/BotStack';
+import BotQueue from './gameplayComponents/BotQueue';
+
+const Page = styled.div`
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+`
+
+
+const App = props => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Page>
+      <BotStack />
+      <BotQueue />
+    </Page>
   );
 }
 
-export default App;
+const msp = state => {
+  return {}
+}
+
+const mdp = dispatch => {
+  return {}
+}
+
+export default connect(msp, mdp)(App);
