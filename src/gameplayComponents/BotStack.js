@@ -17,8 +17,6 @@ const Container = styled.div`
 
 const BotStack = props => {
 
-    
-
     return (
         <>
         <h1>Bot Stack</h1>
